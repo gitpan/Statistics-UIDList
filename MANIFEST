@@ -9,7 +9,7 @@ t/00_compile.t
 t/01_new.t
 t/02_list.t
 t/03_uniq.t
-t/04_dep.t
+t/04_dup.t
 t/05_limit.t
 xt/01_perlcritic.t
 xt/02_pod-coverage.t

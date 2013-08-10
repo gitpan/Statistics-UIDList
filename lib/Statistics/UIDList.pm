@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use Carp qw/croak/;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 sub new {
     my $class = shift;
@@ -69,17 +69,17 @@ sub _uniq {
     return \@r;
 }
 
-sub dep {
+sub dup {
     my ($self) = @_;
 
-    return $self->{dep} if $self->{dep};
+    return $self->{dup} if $self->{dup};
 
-    $self->{dep} = $self->_dep($self->list);
+    $self->{dup} = $self->_dup($self->list);
 
-    return $self->{dep};
+    return $self->{dup};
 }
 
-sub _dep {
+sub _dup {
     my ($self, $list) = @_;
 
     my %h;
@@ -99,7 +99,7 @@ sub _dep {
     return \@r;
 }
 
-sub deprecate { dep(@_) }
+sub duplicate { dup(@_) }
 
 sub limit {
     my ($self, $cond) = @_;
@@ -160,8 +160,8 @@ Statistics::UIDList - stats ID list
     # get unique id list
     warn $id->uniq;
 
-    # get only deprecated id list
-    warn $id->dep;
+    # get only duplicated id list
+    warn $id->dup;
 
     # get count limited id list
     warn $id->limit(2);
@@ -186,13 +186,13 @@ get $num-th id list, unless $num then get all id list
 
 get $num-th unique id list, unless $num then get all unique id list
 
-=head2 dep
+=head2 dup
 
-get deprecated id list
+get duplicated id list
 
-=head3 deprecate
+=head3 duplicate
 
-alias of C<dep> function
+alias of C<dup> function
 
 =head2 limit($num or $cond_sub)
 

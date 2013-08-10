@@ -14,7 +14,7 @@ my $list3 = [qw/a01 b01/];
         $list2,
     );
 
-    is_deeply $id->dep, [qw/a01 a02 b01 c01 c02 c03/];
+    is_deeply $id->dup, [qw/a01 a02 b01 c01 c02 c03/];
 }
 
 {
@@ -24,7 +24,7 @@ my $list3 = [qw/a01 b01/];
         $list3,
     );
 
-    is_deeply $id->dep, [qw/a01 b01/];
+    is_deeply $id->dup, [qw/a01 b01/];
 }
 
 done_testing;

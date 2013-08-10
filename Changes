@@ -1,4 +1,7 @@
 Revision history for Perl extension Statistics::UIDList
 
+0.02    Sun Aug 11 08:43:22 JST 2013
+        - changed function name
+
 0.01    Sat Aug 10 20:37:42 JST 2013
         - original version
