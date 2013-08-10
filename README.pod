@@ -1,0 +1,51 @@
+=encoding utf8
+
+
+This is Perl module B<Statistics::UIDList>.
+
+=begin html
+
+<a href="http://travis-ci.org/bayashi/Statistics-UIDList"><img src="https://secure.travis-ci.org/bayashi/Statistics-UIDList.png"/></a> <a href="https://coveralls.io/r/bayashi/Statistics-UIDList"><img src="https://coveralls.io/repos/bayashi/Statistics-UIDList/badge.png?branch=master"/></a>
+
+=end html
+
+
+=head1 INSTALLATION
+
+Statistics::UIDList installation is straightforward. If your CPAN shell is set up,
+you should just be able to do
+
+    % cpan Statistics::UIDList
+
+Download it, unpack it, then build it as per the usual:
+
+    % perl Makefile.PL
+    % make && make test
+
+Then install it:
+
+    % make install
+
+
+=head1 DOCUMENTATION
+
+Statistics::UIDList documentation is available as in POD. So you can do:
+
+    % perldoc Statistics::UIDList
+
+
+=head1 REPOSITORY
+
+Statistics::UIDList is hosted on github
+L<http://github.com/bayashi/Statistics-UIDList>
+
+
+=head1 LICENSE
+
+This module is free software; you can redistribute it and/or
+modify it under the same terms as Perl itself. See L<perlartistic>.
+
+
+=head1 AUTHOR
+
+Dai Okabayashi E<lt>bayashi@cpan.orgE<gt>
