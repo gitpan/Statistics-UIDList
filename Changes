@@ -1,5 +1,8 @@
 Revision history for Perl extension Statistics::UIDList
 
+0.03    Sun Aug 11 09:58:13 JST 2013
+        - fixed logic for getting duplicate id list
+
 0.02    Sun Aug 11 08:43:22 JST 2013
         - changed function name
 

@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use Carp qw/croak/;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 sub new {
     my $class = shift;
@@ -80,23 +80,27 @@ sub dup {
 }
 
 sub _dup {
-    my ($self, $list) = @_;
+    my ($self) = @_;
 
     my %h;
-    for my $id (@{$list}) {
-        $h{$id}++;
-    }
-
-    my @r;
-    for my $id (@{$list}) {
-        next unless $h{$id};
-        if ($h{$id} >= $#{$self->{lists}} + 1) {
-            push @r, $id;
-            $h{$id} = 0; # never pick up
+    for my $list (@{$self->{lists}}) {
+        my %e;
+        for my $id (@{$list}) {
+            $h{$id}++ unless $e{$id};
+            $e{$id} = 1;
         }
     }
 
-    return \@r;
+    my %d;
+    my @dup;
+    for my $id (@{$self->list}) {
+        if (!$d{$id} && $h{$id} == $#{$self->{lists}} + 1) {
+            push @dup, $id;
+            $d{$id} = 1;
+        }
+    }
+
+    return \@dup;
 }
 
 sub duplicate { dup(@_) }
